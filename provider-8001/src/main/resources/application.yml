@@ -1,0 +1,38 @@
+server:
+  port: 8001
+spring:
+  datasource:                             #druid 监控页面
+    druid:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://127.0.0.1:3306/ssm
+      username: root
+      password: 0
+      initial-size: 2
+      max-active: 4
+      maxWait: 15000
+      validationQuery: SELECT 'x'    #验证连接
+      #配置监控页面
+      stat-view-servlet:
+        login-username: admin
+        login-password: 123456
+        allow:
+        deny: 192.168.9.123
+        url-pattern: '/druid/*'
+        enabled: true   #启用监控页面
+      web-stat-filter:
+        exclusions: '*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*'
+        url-pattern: '/*'
+        enabled: true
+  application:
+    name: eureka-server-provider
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
+#    serviceUrl:
+#      defaultZone: http://localhost:7001/eureka/
+mybatis:
+  type-aliases-package: com.yx.spring.common.pojo
+#  mapper-locations:
+#    - classpath:mapper/*.xml

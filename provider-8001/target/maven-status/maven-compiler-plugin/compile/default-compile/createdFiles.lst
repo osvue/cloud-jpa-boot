@@ -1,0 +1,5 @@
+com\yx\spring\eurekaprovider8001\controller\UserController.class
+com\yx\spring\eurekaprovider8001\service\UsersService.class
+com\yx\spring\eurekaprovider8001\EurekaProvider8001Application.class
+com\yx\spring\eurekaprovider8001\mapper\UsersMapper.class
+com\yx\spring\eurekaprovider8001\service\impl\UsersServiceImpl.class
